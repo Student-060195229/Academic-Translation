@@ -4,6 +4,12 @@ Skill AI untuk penerjemahan secara akademis, dengan fokus pada terjemahan teks A
 
 Repository ini berisi spesifikasi skill AI untuk penerjemah kitab kuning dan literatur Islam klasik. Fokus utamanya adalah menjaga keakuratan makna, struktur kalimat, istilah syar'i, serta batasan teks sumber agar tidak terjadi penambahan, pengurangan, atau interpretasi yang melampaui konteks yang tersedia.
 
+## Latar Belakang dan Catatan Proyek
+
+Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berorientasi pada pendekatan Muadalah Saudi Arabia, khususnya dalam menjaga akurasi istilah, struktur, serta kesesuaian materi pendidikan Islam dengan kebutuhan pembelajaran yang terstandar.
+
+Dengan demikian, skill ini tidak hanya berfungsi sebagai alat penerjemah umum, tetapi juga sebagai pendukung akademik untuk menjaga kualitas terjemahan modul pembelajaran agar tetap setia terhadap sumber, konsisten dalam istilah keislaman, dan layak digunakan dalam konteks pendidikan pesantren dan kurikulum formal.
+
 ## Tujuan Proyek
 
 Proyek ini dirancang untuk membantu proses penerjemahan teks Arab menjadi Bahasa Indonesia dengan pendekatan:
