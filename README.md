@@ -36,7 +36,7 @@ Proyek ini dirancang untuk membantu proses penerjemahan teks Arab menjadi Bahasa
 Academic-Translation/
 ├── Program.py           # Definisi skill dalam format Python
 ├── SKILL.md             # Dokumen spesifikasi skill lengkap
-├── Skills.yaml          # Metadata skill dalam format YAML
+├── Rules.yaml           # Metadata skill dalam format YAML
 ├── README.md            # Dokumentasi utama proyek
 ├── LICENSE              # Lisensi repository
 └── .gitignore           # (jika ada di branch aktif)
@@ -50,7 +50,7 @@ Berisi variabel `SKILL` yang menyimpan spesifikasi skill AI dalam bentuk string.
 ### SKILL.md
 Dokumen utama yang menjelaskan prinsip-prinsip penerjemahan, aturan prioritas, larangan, dan format output yang harus dipatuhi.
 
-### Skills.yaml
+### Rules.yaml
 Metadata skill yang dipakai untuk mendefinisikan domain, tujuan utama, kebijakan sumber, kebijakan penerjemahan, output, serta workflow skill.
 
 ## Prinsip Utama Skill
