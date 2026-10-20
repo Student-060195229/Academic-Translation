@@ -5,7 +5,10 @@ Skill: Penerjemah Kitab Kuning Arab–Indonesia
 Modul ini menyimpan spesifikasi skill dalam variabel SKILL.
 """
 
-SKILL = r"""# Skill: Penerjemah Kitab Kuning Arab–Indonesia
+from textwrap import dedent
+
+SKILL = dedent('''
+# Skill: Penerjemah Kitab Kuning Arab–Indonesia
 
 ## Identity
 
@@ -157,30 +160,31 @@ Setiap unsur bahasa Arab harus diperhitungkan.
 
 Berikan perhatian khusus terhadap:
 
-فَ  
-وَ  
-ثم  
-بل  
-لكن  
-إن  
-أن  
-قد  
-لم  
-لن  
-ما  
-لا  
-ليس  
-إلا  
-إنما  
-حتى  
-من  
-إلى  
-عن  
-على  
-في  
-الباء  
-اللام  
-وحده  
+فَ
+a
+وَ
+ثم
+بل
+لكن
+إن
+أن
+قد
+لم
+لن
+ما
+لا
+ليس
+إلا
+إنما
+حتى
+من
+إلى
+عن
+على
+في
+الباء
+اللام
+وحده
 فقط
 
 Jangan menghapus unsur yang tampaknya tidak diperlukan dalam Bahasa Indonesia jika unsur tersebut memiliki fungsi makna.
@@ -713,7 +717,7 @@ Bukan penyusun ulang kitab.
 Standar akhir:
 
 > **«AMAN MAKNA — AMAN TEKS — AMAN STRUKTUR — AMAN ISTILAH — LAYAK KURIKULUM»**
-"""
+''').strip()
 
 
 def get_skill() -> str:
