@@ -2,13 +2,13 @@
 
 Skill AI untuk penerjemahan secara akademis, dengan fokus pada terjemahan teks Arab ke Bahasa Indonesia yang akurat, konsisten, dan sesuai kaidah keilmuan Islam klasik.
 
-Repository ini berisi spesifikasi skill AI untuk penerjemah kitab kuning dan literatur Islam klasik. Fokus utamanya adalah menjaga keakuratan makna, struktur kalimat, istilah syar'i, serta batasan teks sumber agar tidak terjadi penambahan, pengurangan, atau interpretasi yang melampaui konteks yang tersedia.
+Repository ini berisi spesifikasi skill AI untuk penerjemah kitab kuning dan literatur Islam klasik. Fokus utamanya adalah menjaga keakuratan makna, struktur kalimat, istilah syar'i, serta batasan teks agar tetap sesuai sumber.
 
 ## Latar Belakang dan Catatan Proyek
 
-Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berorientasi pada pendekatan Muadalah Saudi Arabia, khususnya dalam menjaga akurasi istilah, struktur, serta kesesuaian materi pendidikan Islam dengan kebutuhan pembelajaran yang terstandar.
+Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berlaku di lingkungan pesantren.
 
-Dengan demikian, skill ini tidak hanya berfungsi sebagai alat penerjemah umum, tetapi juga sebagai pendukung akademik untuk menjaga kualitas terjemahan modul pembelajaran agar tetap setia terhadap sumber, konsisten dalam istilah keislaman, dan layak digunakan dalam konteks pendidikan pesantren dan kurikulum formal.
+Dengan demikian, skill ini tidak hanya berfungsi sebagai alat penerjemah umum, tetapi juga sebagai pendukung akademik untuk menjaga kualitas terjemahan modul pembelajaran agar tetap setia terhadap sumber dan sesuai dengan kaidah keilmuan Islam klasik.
 
 ## Tujuan Proyek
 
@@ -86,6 +86,33 @@ Skill ini tidak membolehkan:
 - menghilangkan penafian, pengecualian, atau penegasan
 - memasukkan opini penerjemah
 
+## Link Repository untuk Python / Gemini
+
+Untuk mengambil skill ini secara otomatis dari Python, Gemini, atau aplikasi lain, gunakan link repository berikut:
+
+- Repository GitHub: https://github.com/Student-060195229/Academic-Translation
+- File utama skill: https://github.com/Student-060195229/Academic-Translation/blob/main/Program.py
+- File raw Python: https://raw.githubusercontent.com/Student-060195229/Academic-Translation/main/Program.py
+
+Contoh pengambilan lewat Python:
+
+```python
+import requests
+
+url = "https://raw.githubusercontent.com/Student-060195229/Academic-Translation/main/Program.py"
+content = requests.get(url, timeout=30).text
+print(content)
+```
+
+Jika ingin memanggil fungsi `get_skill()` dari file yang sudah diunduh, gunakan:
+
+```python
+from Program import get_skill
+
+skill = get_skill()
+print(skill)
+```
+
 ## Cara Menjalankan
 
 Pastikan Python sudah terinstal di sistem Anda.
@@ -122,7 +149,7 @@ Repository ini dilindungi oleh lisensi yang tersedia di file `LICENSE`.
 
 ## Catatan
 
-Project ini bertujuan untuk menjaga kualitas terjemahan secara akademis dan tidak menggantikan metode tafsir atau syarah. Oleh karena itu, output yang dihasilkan harus berfokus pada pemindahan makna secara aman dan setia terhadap teks sumber.
+Project ini bertujuan untuk menjaga kualitas terjemahan secara akademis dan tidak menggantikan metode tafsir atau syarah. Oleh karena itu, output yang dihasilkan harus berfokus pada pemindahan makna, struktur, dan istilah yang setia terhadap sumber, bukan pada interpretasi tambahan.
 
 ---
 
