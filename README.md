@@ -6,7 +6,7 @@ Repository ini berisi spesifikasi skill AI untuk penerjemah kitab kuning dan lit
 
 ## Latar Belakang dan Catatan Proyek
 
-Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berlaku di lingkungan pesantren.
+Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berlaku di Saudi Arabia.
 
 Dengan demikian, skill ini tidak hanya berfungsi sebagai alat penerjemah umum, tetapi juga sebagai pendukung akademik untuk menjaga kualitas terjemahan modul pembelajaran agar tetap setia terhadap sumber dan sesuai dengan kaidah keilmuan Islam klasik.
 
