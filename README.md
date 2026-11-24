@@ -191,7 +191,7 @@ GitHub Actions pada `.github/workflows/quality.yml` menjalankan pemeriksaan sink
 Buat skill bernama Academic Translation untuk menerjemahkan teks Arab,
 terutama kitab kuning dan literatur Islam klasik, ke Bahasa Indonesia akademis.
 Gunakan sebagai sumber utama:
-https://github.com/Student-060195229/Academic-Translation
+[https://github.com/Student-060195229/Academic-Translation.git]
 
 Ikuti SKILL.md dan Rules.yaml. Prioritaskan kesetiaan makna dan struktur,
 kelengkapan, konsistensi istilah syar'i, serta keterbacaan formal. Jangan
