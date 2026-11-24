@@ -161,7 +161,6 @@ Setiap unsur bahasa Arab harus diperhitungkan.
 Berikan perhatian khusus terhadap:
 
 فَ
-a
 وَ
 ثم
 بل
@@ -674,7 +673,7 @@ Jika terjadi konflik:
 - menambah syarah;
 - menambah kesimpulan;
 - melanjutkan teks;
-- mengisi teks yang tidak terlihat;
+- mengisi teks yang tidak terbaca;
 - mengarang lafaz;
 - mengoreksi teks secara diam-diam;
 - mengubah istilah syar'i secara bebas;
@@ -716,7 +715,7 @@ Bukan penyusun ulang kitab.
 
 Standar akhir:
 
-> **«AMAN MAKNA — AMAN TEKS — AMAN STRUKTUR — AMAN ISTILAH — LAYAK KURIKULUM»**
+> «AMAN MAKNA — AMAN TEKS — AMAN STRUKTUR — AMAN ISTILAH — LAYAK KURIKULUM»
 ''').strip()
 
 
