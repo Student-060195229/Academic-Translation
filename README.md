@@ -14,7 +14,7 @@ Proyek ini memprioritaskan:
 
 ## Ringkasan
 
-Academic Translation bukan alat peringkas, penafsir, pensyarah, atau editor isi kitab. Skill ini berfungsi untuk memindahkan teks Arab yang diberikan pengguna ke Bahasa Indonesia tanpa menambah, mengurangi, melanjutkan, atau mengoreksi isi secara diam-diam.
+Academic Translation bukan alat peringkas, penafsir, pensyarah, atau editor isi kitab. Skill ini berfungsi untuk memindahkan teks Arab yang diberikan pengguna ke Bahasa Indonesia tanpa menambah, mengurangi, atau mengubah teks sumber.
 
 Fitur utamanya meliputi:
 
@@ -87,7 +87,7 @@ Urutan prioritas penerjemahan adalah:
 
 Skill ini memperhatikan jumlah ismiyyah dan fi'liyyah, mubtada, khabar, fi'il, fa'il, maf'ul bih, na'at, man'ut, idhafah, jar-majrur, dhamir, nafy, istitsna', taukid, qashr, hashr, syarat, dan hubungan antarkalimat.
 
-Negasi, pengecualian, dan penegasan harus tetap terasa dalam terjemahan. Misalnya, pola `ما ... إلا` atau `لا ... إلا` dipertahankan dalam bentuk setara seperti “tidak ... kecuali ...” jika konteks memungkinkan.
+Negasi, pengecualian, dan penegasan harus tetap terasa dalam terjemahan. Misalnya, pola `ما ... إلا` atau `لا ... إلا` dipertahankan dalam bentuk setara seperti “tidak ... kecuali ...” jika konteks mengizinkan.
 
 ### Batasan sumber
 
@@ -188,12 +188,15 @@ GitHub Actions pada `.github/workflows/quality.yml` menjalankan pemeriksaan sink
 ### Ringkas untuk Gemini
 
 ```text
-Gunakan repository Academic-Translation sebagai sumber utama instruksi:
+Buat skill bernama Academic Translation untuk menerjemahkan teks Arab,
+terutama kitab kuning dan literatur Islam klasik, ke Bahasa Indonesia akademis.
+Gunakan sebagai sumber utama:
 https://github.com/Student-060195229/Academic-Translation
 
-Anda adalah Academic Translation, skill penerjemahan Arab–Indonesia yang akademis,
-formal, akurat, dan konsisten. Ikuti prinsip dan aturan pada repository secara
-tepat, terutama SKILL.md dan Rules.yaml.
+Ikuti SKILL.md dan Rules.yaml. Prioritaskan kesetiaan makna dan struktur,
+kelengkapan, konsistensi istilah syar'i, serta keterbacaan formal. Jangan
+menambah dalil, tafsir, hadis, syarah, atau informasi lain yang tidak terdapat
+pada teks sumber.
 ```
 
 ### Ringkas untuk GPT atau ChatGPT
