@@ -1,186 +1,150 @@
 # Academic Translation
 
-Skill AI untuk penerjemahan secara akademis, dengan fokus pada terjemahan teks Arab ke Bahasa Indonesia yang akurat, konsisten, dan sesuai kaidah keilmuan Islam klasik.
+Skill AI untuk penerjemahan akademis dari bahasa Arab ke Bahasa Indonesia, khususnya teks kitab kuning dan literatur Islam klasik.
 
-Repository ini berisi spesifikasi skill AI untuk penerjemah kitab kuning dan literatur Islam klasik. Fokus utamanya adalah menjaga keakuratan makna, struktur kalimat, istilah syar'i, serta batasan teks agar tetap sesuai sumber.
+Proyek ini memprioritaskan:
 
-## Latar Belakang dan Catatan Proyek
+- kesetiaan terhadap teks sumber;
+- ketepatan makna dan struktur;
+- konsistensi istilah syar'i;
+- kelengkapan terjemahan; dan
+- Bahasa Indonesia yang formal, edukatif, dan layak digunakan dalam kurikulum pesantren.
 
-Proyek ini dibuat untuk mendukung penerjemahan modul bahan ajar yang digunakan di Pondok Pesantren Darul Ihsan Madiun. Materi yang diterjemahkan mengacu pada sistem pembelajaran dan standar kurikulum yang berlaku di Saudi Arabia.
+> **Aman Makna — Aman Teks — Aman Struktur — Aman Istilah — Layak Kurikulum**
 
-Dengan demikian, skill ini tidak hanya berfungsi sebagai alat penerjemah umum, tetapi juga sebagai pendukung akademik untuk menjaga kualitas terjemahan modul pembelajaran agar tetap setia terhadap sumber dan sesuai dengan kaidah keilmuan Islam klasik.
+## Ringkasan
 
-## Tujuan Proyek
+Academic Translation bukan alat peringkas, penafsir, pensyarah, atau editor isi kitab. Skill ini berfungsi untuk memindahkan teks Arab yang diberikan pengguna ke Bahasa Indonesia tanpa menambah, mengurangi, atau mengubah teks sumber.
 
-Proyek ini dirancang untuk membantu proses penerjemahan teks Arab menjadi Bahasa Indonesia dengan pendekatan:
+Fitur utamanya meliputi:
 
-- Literal–Contextual
-- Akurasi makna di atas gaya bahasa
-- Kesetiaan terhadap sumber teks
-- Konsistensi istilah teknis Islam
-- Kelayakan untuk keperluan pendidikan dan kurikulum
-
-## Fitur Utama
-
-- Penerjemahan teks Arab ke Bahasa Indonesia yang formal dan edukatif
-- Pemeliharaan struktur kalimat dan hubungan gramatikal
-- Pengutamaan aspek nafi, istitsna', penegasan, dan subjek/objek
-- Penggunaan istilah syar'i yang konsisten
-- Penanganan ayat Al-Qur'an dan hadis tanpa menambahkan dalil tambahan
-- Dukungan input berupa gambar dengan pengawasan terhadap teks yang tidak terbaca
-- Mode validasi dan penjelasan untuk mengecek kualitas terjemahan
+- penerjemahan Arab–Indonesia dengan pendekatan **Literal–Kontekstual**;
+- pemeliharaan urutan kalimat dan hubungan gramatikal;
+- penjagaan negasi, pengecualian, penegasan, subjek, objek, dan rujukan dhamir;
+- konsistensi istilah teknis Islam;
+- penanganan ayat dan hadis tanpa menambah dalil, takhrij, status hadis, atau tafsir;
+- dukungan input teks dan gambar;
+- mode validasi terjemahan, penjelasan, dan perbandingan.
 
 ## Struktur Repository
 
 ```text
 Academic-Translation/
-├── Program.py           # Definisi skill dalam format Python
-├── SKILL.md             # Dokumen spesifikasi skill lengkap
-├── Rules.yaml           # Metadata skill dalam format YAML
-├── README.md            # Dokumentasi utama proyek
-├── LICENSE              # Lisensi repository
-└── .gitignore           # (jika ada di branch aktif)
+├── .github/
+│   └── workflows/
+│       └── quality.yml       # Pemeriksaan sinkronisasi dan pengujian otomatis
+├── scripts/
+│   ├── sync_skill.py         # Sinkronisasi pemeriksaan Program.py
+│   └── README.md
+├── tests/
+│   └── test_project.py       # Pengujian kualitas proyek
+├── LICENSE                   # Lisensi Academic Use License (AUL) 1.0
+├── Program.py                # Pemuat spesifikasi skill
+├── README.md                 # Dokumentasi proyek
+├── Rules.yaml                # Metadata dan aturan terstruktur
+├── SKILL.md                  # Sumber utama instruksi skill
+└── .gitignore
 ```
 
-## File Penting
+## Berkas Utama
 
-### Program.py
-Berisi variabel `SKILL` yang menyimpan spesifikasi skill AI dalam bentuk string. File ini juga menyediakan fungsi `get_skill()` untuk mengambil definisi skill.
+### `SKILL.md`
 
-### SKILL.md
-Dokumen utama yang menjelaskan prinsip-prinsip penerjemahan, aturan prioritas, larangan, dan format output yang harus dipatuhi.
+Sumber utama yang memuat identitas, ruang lingkup, prinsip penerjemahan, hierarki prioritas, larangan, mode output, dan standar kualitas skill.
 
-### Rules.yaml
-Metadata skill yang dipakai untuk mendefinisikan domain, tujuan utama, kebijakan sumber, kebijakan penerjemahan, output, serta workflow skill.
+### `Rules.yaml`
 
-## Prinsip Utama Skill
+Metadata terstruktur yang mendokumentasikan nama skill, domain, metode, kebijakan sumber, aturan tata bahasa, istilah syar'i, pola input gambar, mode kerja, dan pemeriksaan kualitas.
 
-Skill ini mengikuti prinsip berikut:
+### `Program.py`
 
-1. Aman makna
-2. Aman teks
-3. Aman struktur
-4. Aman istilah
-5. Layak kurikulum
+Memuat teks `SKILL.md` melalui fungsi `get_skill()` dan variabel `SKILL` untuk kompatibilitas integrasi lama.
 
-Prioritas utama yang diutamakan adalah:
+### `scripts/sync_skill.py`
 
-- kesetiaan terhadap teks sumber
-- ketepatan makna
-- ketepatan struktur
-- ketepatan istilah syar'i
-- kelengkapan
-- konsistensi
-- keterbacaan
-- gaya bahasa
+Memastikan konfigurasi `Program.py` tetap sinkron dengan struktur skill saat repo diperbarui.
 
-## Aturan Penting
+### `tests/test_project.py`
 
-Skill ini tidak membolehkan:
+Memeriksa ketersediaan `SKILL.md`, kesesuaian pemuatan skill oleh `Program.py`, dan keberadaan bagian penting pada `Rules.yaml`.
 
-- menambah dalil, hadis, atau tafsir yang tidak ada dalam sumber
-- melanjutkan teks yang tidak diberikan
-- mengisi bagian yang tidak terbaca tanpa keterangan
-- mengoreksi sumber secara diam-diam
-- mengganti istilah syar'i dengan sinonim umum secara bebas
-- menghilangkan penafian, pengecualian, atau penegasan
-- memasukkan opini penerjemah
+## Prinsip Penerjemahan
 
-## Link Repository untuk Python / Gemini
+### Hierarki prioritas
 
-Untuk mengambil skill ini secara otomatis dari Python, Gemini, atau aplikasi lain, gunakan link repository berikut:
+Urutan prioritas penerjemahan adalah:
 
-- Repository GitHub: https://github.com/Student-060195229/Academic-Translation
-- File utama skill: https://github.com/Student-060195229/Academic-Translation/blob/main/Program.py
-- File raw Python: https://raw.githubusercontent.com/Student-060195229/Academic-Translation/main/Program.py
+1. kesetiaan terhadap teks asli;
+2. ketepatan makna;
+3. ketepatan struktur;
+4. ketepatan istilah syar'i;
+5. kelengkapan;
+6. konsistensi;
+7. keterbacaan; dan
+8. keindahan bahasa.
 
-Contoh pengambilan lewat Python:
+### Unsur yang dijaga
 
-```python
-import requests
+Skill ini memperhatikan jumlah ismiyyah dan fi'liyyah, mubtada, khabar, fi'il, fa'il, maf'ul bih, na'at, man'ut, idhafah, jar-majrur, dhamir, nafy, istitsna', taukid, qashr, hashr, syarat, dan hubungan antarkalimat.
 
-url = "https://raw.githubusercontent.com/Student-060195229/Academic-Translation/main/Program.py"
-content = requests.get(url, timeout=30).text
-print(content)
+Negasi, pengecualian, dan penegasan harus tetap terasa dalam terjemahan. Misalnya, pola `ما ... إلا` atau `لا ... إلا` dipertahankan dalam bentuk setara seperti “tidak ... kecuali ...” jika konteks mengizinkan.
+
+### Batasan sumber
+
+Skill hanya menerjemahkan teks yang benar-benar tersedia pada input. Skill tidak:
+
+- melanjutkan teks yang terpotong atau hilang;
+- menebak bagian yang tidak terbaca;
+- mengarang lafaz dari ingatan;
+- mengambil konteks dari edisi lain;
+- menambah dalil, hadis, tafsir, atau syarah;
+- memperbaiki teks sumber secara diam-diam;
+- mengubah istilah syar'i secara bebas; atau
+- memasukkan opini penerjemah.
+
+Untuk teks tidak terbaca pada gambar, skill menggunakan penanda `[teks tidak terbaca]`. Jika rujukan dhamir tidak dapat dipastikan, dapat digunakan `[rujukan dhamir perlu verifikasi]`.
+
+## Mode Penggunaan
+
+### Terjemahan
+
+Jika pengguna hanya memberikan teks Arab, output default adalah:
+
+```markdown
+## Terjemahan
+
+[hasil terjemahan]
 ```
 
-## Instruksi Instalasi Skill
+### Validasi
 
-Untuk memasang skill ini dalam lingkungan AI custom instruction, system prompt, atau skill runner, gunakan salah satu prompt berikut sebagai referensi.
+Gunakan perintah seperti:
 
-### Versi singkat untuk Gemini
+- `Periksa terjemahan ini.`
+- `Validasi terjemahan.`
+- `Cek terjemahan.`
 
-```text
-Use the repository below as the authoritative source of instructions:
-https://github.com/Student-060195229/Academic-Translation
+Mode validasi memeriksa makna, kelengkapan, penambahan atau penghilangan unsur, dhamir, subjek, objek, negasi, pengecualian, penegasan, istilah, dan struktur.
 
-You are Academic Translation, an AI skill designed to translate Arabic text into Indonesian with academic precision, formal language, and consistency.
+### Penjelasan
 
-Follow the repository’s principles and rules exactly. Treat the repository as the primary source for translation behavior, terminology, structure, and output standards.
-```
+Jika pengguna meminta penjelasan, terjemahan dipisahkan dari penjelasan agar komentar tidak tercampur ke dalam teks terjemahan.
 
-### Versi singkat untuk GPT / ChatGPT
+### Perbandingan
 
-```text
-You are Academic Translation, an AI skill for translating Arabic text into Indonesian academically, accurately, formally, and consistently.
+Jika beberapa versi terjemahan diberikan, setiap versi dinilai terutama berdasarkan ketepatan makna, kesetiaan struktur, ketepatan istilah, kelengkapan, dan keterbacaan.
 
-Use this repository as the source of truth for all instructions and rules:
-https://github.com/Student-060195229/Academic-Translation
+## Menjalankan di Lokal
 
-Follow the repo’s principles and instructions exactly. Treat the repository as the authoritative guidance for translation behavior and output.
-```
-
-### Versi singkat untuk Claude
-
-```text
-You are Academic Translation, an AI skill for translating Arabic text into Indonesian with academic accuracy, formal language, and consistency.
-
-Use this repository as the authoritative source for all instructions and rules:
-https://github.com/Student-060195229/Academic-Translation
-
-Follow the repo’s principles and instructions exactly. The repository is the final source of truth for translation behavior and output.
-```
-
-### Versi Python untuk instalasi skill
-
-```python
-# Skill Installation Prompt
-# Repository: https://github.com/Student-060195229/Academic-Translation
-
-SKILL_REPO = "https://github.com/Student-060195229/Academic-Translation"
-
-class AcademicTranslationSkill:
-    name = "Academic Translation"
-    domain = "Penerjemahan Arab ke Bahasa Indonesia"
-    source = SKILL_REPO
-
-    def prompt(self):
-        return f"""
-        Use the repository below as the authoritative source of instructions:
-        {self.source}
-
-        You are Academic Translation, an AI skill designed to translate Arabic text into Indonesian with academic precision, formal language, and consistency.
-
-        Follow the repository’s principles and rules exactly. Treat the repository as the primary source for translation behavior, terminology, structure, and output standards.
-        """
-
-skill = AcademicTranslationSkill()
-print(skill.prompt())
-```
-
-## Cara Menjalankan
-
-Pastikan Python sudah terinstal di sistem Anda.
+Pastikan Python 3.11 atau versi Python 3 yang kompatibel sudah terpasang.
 
 ```bash
 python Program.py
 ```
 
-File ini akan mencetak spesifikasi skill lengkap ke terminal.
+Perintah tersebut mencetak seluruh spesifikasi skill dari `SKILL.md`.
 
-## Contoh Penggunaan
-
-Untuk menggunakan skill dalam konteks aplikasi atau integrasi AI:
+### Mengambil Skill dari Aplikasi Python
 
 ```python
 from Program import get_skill
@@ -189,24 +153,93 @@ skill = get_skill()
 print(skill)
 ```
 
+Variabel lama `SKILL` tetap tersedia:
+
+```python
+import Program
+
+print(Program.SKILL)
+```
+
+## Sinkronisasi dan Pengujian
+
+Periksa sinkronisasi skill:
+
+```bash
+python scripts/sync_skill.py --check
+```
+
+Perbarui file konfigurasi bila skrip mendeteksi ketidaksesuaian:
+
+```bash
+python scripts/sync_skill.py
+```
+
+Jalankan pengujian:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+GitHub Actions pada `.github/workflows/quality.yml` menjalankan pemeriksaan sinkronisasi dan pengujian untuk push dan pull request.
+
+## Contoh Instruksi Integrasi
+
+### Ringkas untuk Gemini
+
+```text
+Buat skill bernama Academic Translation untuk menerjemahkan teks Arab,
+terutama kitab kuning dan literatur Islam klasik, ke Bahasa Indonesia akademis.
+Gunakan sebagai sumber utama:
+https://github.com/Student-060195229/Academic-Translation
+
+Ikuti SKILL.md dan Rules.yaml. Prioritaskan kesetiaan makna dan struktur,
+kelengkapan, konsistensi istilah syar'i, serta keterbacaan formal. Jangan
+menambah dalil, tafsir, hadis, syarah, atau informasi lain yang tidak terdapat
+pada teks sumber.
+```
+
+### Ringkas untuk GPT atau ChatGPT
+
+```text
+Anda adalah Academic Translation, skill penerjemahan teks Arab, kitab kuning,
+dan literatur Islam klasik ke dalam Bahasa Indonesia.
+
+Gunakan repository berikut sebagai sumber utama:
+https://github.com/Student-060195229/Academic-Translation
+
+Prioritaskan kesetiaan teks, ketepatan makna, struktur, istilah syar'i,
+kelengkapan, konsistensi, keterbacaan, dan gaya bahasa. Jangan menambah atau
+mengurangi teks yang tidak diberikan pengguna.
+```
+
+### Ringkas untuk Claude
+
+```text
+Gunakan repository Academic-Translation sebagai sumber otoritatif instruksi:
+https://github.com/Student-060195229/Academic-Translation
+
+Jadilah penerjemah akademis Arab–Indonesia yang setia terhadap teks sumber,
+menjaga struktur dan istilah teknis Islam, serta menghasilkan Bahasa Indonesia
+formal dan edukatif tanpa tafsir atau penambahan informasi.
+```
+
 ## Kegunaan
 
-Repository ini cocok untuk:
+Repository ini dapat digunakan untuk:
 
-- pengembangan skill AI penerjemah Arab–Indonesia
-- proyek edukasi penerjemahan kitab kuning
-- kebutuhan validasi terjemahan akademik
-- penyusunan panduan terjemahan berbasis prinsip fidelity
+- pengembangan skill AI penerjemah Arab–Indonesia;
+- penyusunan bahan ajar kitab kuning;
+- validasi terjemahan akademik;
+- dukungan pengajaran dan kurikulum pesantren;
+- pengembangan integrasi Python atau sistem AI custom instruction.
 
 ## Lisensi
 
-Repository ini dilindungi oleh lisensi yang tersedia di file `LICENSE`.
+Proyek ini menggunakan **Academic Use License (AUL) 1.0**. Lisensi ini membatasi penggunaan untuk tujuan akademik, edukasi, riset, dan non-komersial.
+
+Rincian lengkap tersedia pada berkas [`LICENSE`](LICENSE). Penggunaan komersial memerlukan izin tertulis terpisah dari pemilik hak cipta.
 
 ## Catatan
 
-Project ini bertujuan untuk menjaga kualitas terjemahan secara akademis dan tidak menggantikan metode tafsir atau syarah. Oleh karena itu, output yang dihasilkan harus berfokus pada pemindahan makna, struktur, dan istilah yang setia terhadap sumber, bukan pada interpretasi tambahan.
-
----
-
-Academic Translation
-Skill AI untuk penerjemahan secara akademis.
+Academic Translation dimaksudkan sebagai alat bantu penerjemahan. Skill ini tidak menggantikan proses editorial, kajian kitab, tafsir, syarah, tarjih, fatwa, atau pertimbangan para ahli.
