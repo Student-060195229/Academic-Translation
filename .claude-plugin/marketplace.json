@@ -1,0 +1,22 @@
+{
+  "name": "academic-translation",
+  "owner": {
+    "name": "Student-060195229",
+    "url": "https://github.com/Student-060195229"
+  },
+  "description": "Plugin penerjemahan Arab–Indonesia untuk kitab kuning dan literatur Islam klasik secara setia, formal, dan konsisten.",
+  "plugins": [
+    {
+      "name": "academic-translation",
+      "source": "./",
+      "description": "1 skill penerjemahan Arab–Indonesia: validasi, terjemahan literal-kontekstual, penjelasan, dan perbandingan.",
+      "version": "1.0.0",
+      "license": "Other",
+      "homepage": "https://github.com/Student-060195229/Academic-Translation",
+      "repository": "https://github.com/Student-060195229/Academic-Translation",
+      "skills": [
+        "./claude-skill"
+      ]
+    }
+  ]
+}

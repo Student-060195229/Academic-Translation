@@ -1,0 +1,15 @@
+{
+  "name": "academic-translation",
+  "description": "Penerjemah Arab–Indonesia untuk kitab kuning dan literatur Islam klasik yang menjaga kesetiaan makna, struktur, istilah, dan integritas teks.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Student-060195229",
+    "url": "https://github.com/Student-060195229"
+  },
+  "homepage": "https://github.com/Student-060195229/Academic-Translation",
+  "repository": "https://github.com/Student-060195229/Academic-Translation",
+  "license": "Other",
+  "skills": [
+    "./claude-skill"
+  ]
+}
