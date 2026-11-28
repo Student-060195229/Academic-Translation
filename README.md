@@ -10,7 +10,7 @@ Proyek ini memprioritaskan:
 - kelengkapan terjemahan; dan
 - Bahasa Indonesia yang formal, edukatif, dan layak digunakan dalam kurikulum pesantren.
 
-> **Aman Makna — Aman Teks — Aman Struktur — Aman Istilah — Layak Kurikulum**
+> **Aman Makna | Aman Teks | Aman Struktur | Aman Istilah | Layak Kurikulum**
 
 ## Ringkasan
 
