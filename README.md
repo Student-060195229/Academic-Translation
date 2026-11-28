@@ -14,7 +14,7 @@ Proyek ini memprioritaskan:
 
 ## Ringkasan
 
-Academic Translation bukan alat peringkas, penafsir, pensyarah, atau editor isi kitab. Skill ini berfungsi untuk memindahkan teks Arab yang diberikan pengguna ke Bahasa Indonesia tanpa menambah, mengurangi, atau mengubah teks sumber.
+Academic Translation bukan alat peringkas, penafsir, pensyarah, atau editor isi kitab. Skill ini berfungsi untuk memindahkan teks Arab yang diberikan pengguna ke Bahasa Indonesia tanpa menambah, mengurangi, menggeser, atau melampaui teks sumber.
 
 Fitur utamanya meliputi:
 
@@ -26,13 +26,29 @@ Fitur utamanya meliputi:
 - dukungan input teks dan gambar;
 - mode validasi terjemahan, penjelasan, dan perbandingan.
 
+## Dukungan Platform
+
+Repository ini menyediakan spesifikasi umum sekaligus paket siap digunakan untuk Claude:
+
+- `SKILL.md` adalah sumber utama instruksi untuk integrasi umum;
+- `claude-skill/` adalah paket skill yang dapat diunggah ke Claude atau dipasang di Claude Code;
+- `.claude-plugin/` memuat manifest plugin dan marketplace untuk integrasi Claude;
+- `Program.py` menyediakan akses spesifikasi melalui Python;
+- `Rules.yaml` memuat metadata dan aturan terstruktur.
+
 ## Struktur Repository
 
 ```text
 Academic-Translation/
+├── .claude-plugin/
+│   ├── marketplace.json       # Registrasi paket pada Claude marketplace
+│   └── plugin.json            # Metadata plugin Claude
 ├── .github/
 │   └── workflows/
-│       └── quality.yml       # Pemeriksaan sinkronisasi dan pengujian otomatis
+│       └── quality.yml        # Pemeriksaan sinkronisasi dan pengujian otomatis
+├── claude-skill/
+│   ├── README.md             # Petunjuk instalasi paket Claude
+│   └── SKILL.md              # Instruksi skill khusus Claude
 ├── scripts/
 │   ├── sync_skill.py         # Sinkronisasi pemeriksaan Program.py
 │   └── README.md
@@ -55,6 +71,17 @@ Sumber utama yang memuat identitas, ruang lingkup, prinsip penerjemahan, hierark
 ### `Rules.yaml`
 
 Metadata terstruktur yang mendokumentasikan nama skill, domain, metode, kebijakan sumber, aturan tata bahasa, istilah syar'i, pola input gambar, mode kerja, dan pemeriksaan kualitas.
+
+### `claude-skill/`
+
+Paket skill Claude yang berisi `SKILL.md` beserta petunjuk penggunaannya. Paket ini dapat diunggah sebagai ZIP atau dipasang secara lokal pada Claude Code.
+
+### `.claude-plugin/`
+
+Berisi manifest integrasi Claude:
+
+- `plugin.json` mendeskripsikan nama, versi, pemilik, lisensi, dan lokasi skill plugin;
+- `marketplace.json` mendaftarkan plugin dengan nama `academic-translation` sebagai satu skill yang menyediakan terjemahan, validasi, penjelasan, dan perbandingan.
 
 ### `Program.py`
 
@@ -87,7 +114,7 @@ Urutan prioritas penerjemahan adalah:
 
 Skill ini memperhatikan jumlah ismiyyah dan fi'liyyah, mubtada, khabar, fi'il, fa'il, maf'ul bih, na'at, man'ut, idhafah, jar-majrur, dhamir, nafy, istitsna', taukid, qashr, hashr, syarat, dan hubungan antarkalimat.
 
-Negasi, pengecualian, dan penegasan harus tetap terasa dalam terjemahan. Misalnya, pola `ما ... إلا` atau `لا ... إلا` dipertahankan dalam bentuk setara seperti “tidak ... kecuali ...” jika konteks mengizinkan.
+Negasi, pengecualian, dan penegasan harus tetap terasa dalam terjemahan. Misalnya, pola `ما ... إلا` atau `لا ... إلا` dipertahankan dalam bentuk setara seperti “tidak ... kecuali ...” jika tidak mengubah makna.
 
 ### Batasan sumber
 
@@ -133,6 +160,28 @@ Jika pengguna meminta penjelasan, terjemahan dipisahkan dari penjelasan agar kom
 ### Perbandingan
 
 Jika beberapa versi terjemahan diberikan, setiap versi dinilai terutama berdasarkan ketepatan makna, kesetiaan struktur, ketepatan istilah, kelengkapan, dan keterbacaan.
+
+## Instalasi Claude
+
+### Claude.ai atau Claude Desktop
+
+1. Unduh repository sebagai ZIP atau lakukan clone.
+2. Buat ZIP yang berisi folder `claude-skill`, dengan `claude-skill/SKILL.md` di dalamnya.
+3. Buka **Customize > Skills** pada akun Claude, lalu unggah ZIP paket skill.
+4. Aktifkan skill dan uji dengan perintah: “Terjemahkan teks Arab ini ke Bahasa Indonesia secara setia.”
+
+Detail lengkap tersedia pada [`claude-skill/README.md`](claude-skill/README.md).
+
+### Claude Code
+
+Salin folder `claude-skill` ke salah satu lokasi berikut:
+
+```text
+.claude/skills/academic-translation/
+~/.claude/skills/academic-translation/
+```
+
+Pastikan `SKILL.md` berada di dalam folder `academic-translation`.
 
 ## Menjalankan di Lokal
 
@@ -191,7 +240,7 @@ GitHub Actions pada `.github/workflows/quality.yml` menjalankan pemeriksaan sink
 Buat skill bernama Academic Translation untuk menerjemahkan teks Arab,
 terutama kitab kuning dan literatur Islam klasik, ke Bahasa Indonesia akademis.
 Gunakan sebagai sumber utama:
-[https://github.com/Student-060195229/Academic-Translation.git]
+https://github.com/Student-060195229/Academic-Translation.git
 
 Ikuti SKILL.md dan Rules.yaml. Prioritaskan kesetiaan makna dan struktur,
 kelengkapan, konsistensi istilah syar'i, serta keterbacaan formal. Jangan
@@ -215,14 +264,7 @@ mengurangi teks yang tidak diberikan pengguna.
 
 ### Ringkas untuk Claude
 
-```text
-Gunakan repository Academic-Translation sebagai sumber otoritatif instruksi:
-https://github.com/Student-060195229/Academic-Translation
-
-Jadilah penerjemah akademis Arab–Indonesia yang setia terhadap teks sumber,
-menjaga struktur dan istilah teknis Islam, serta menghasilkan Bahasa Indonesia
-formal dan edukatif tanpa tafsir atau penambahan informasi.
-```
+Untuk integrasi Claude, gunakan paket [`claude-skill`](claude-skill/) atau manifest dalam [`.claude-plugin`](.claude-plugin/) daripada menyalin instruksi singkat secara terpisah. Paket tersebut memuat instruksi lengkap dan konsisten dengan `SKILL.md`.
 
 ## Kegunaan
 
@@ -232,7 +274,8 @@ Repository ini dapat digunakan untuk:
 - penyusunan bahan ajar kitab kuning;
 - validasi terjemahan akademik;
 - dukungan pengajaran dan kurikulum pesantren;
-- pengembangan integrasi Python atau sistem AI custom instruction.
+- pengembangan integrasi Python atau sistem AI custom instruction;
+- pemasangan sebagai skill atau plugin Claude.
 
 ## Lisensi
 
